@@ -19,5 +19,7 @@ public @interface DataMember {
 
     int length() default 0;
 
+    String type() default "";
+
     Class parseStrategy() default Void.class;
 }
