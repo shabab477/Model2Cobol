@@ -110,6 +110,7 @@ public class Main {
 With `CobolBuilder` we can also provide some settings along the chain. They are:
 - `withStartingLevel()`: The starting level of the entity
 - `withMaxDepth()`: Maximum depth for nested objects
+
 Based on the above usage we will get the following COBOL code generation:
 
 ```
