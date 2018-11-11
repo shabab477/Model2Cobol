@@ -1,17 +1,19 @@
 package io.shabab477.github.model2cobol.processor;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class CobolBuilder {
 
     public static CobolBuilderChain with(Object object) {
         return new CobolBuilderChain(object);
     }
 
-    private static class CobolBuilderChain {
+    public static class CobolBuilderChain {
         private int startingLevel = 1;
         private Object object;
         private int maxDepth = 5;
 
-        CobolBuilderChain(Object object) {
+        private CobolBuilderChain(Object object) {
             this.object = object;
         }
 
@@ -24,7 +26,7 @@ public class CobolBuilder {
         }
 
         public String build() {
-            return ModelProcessor.processModel(object, startingLevel, maxDepth);
+            return ModelProcessor.processModel(object, startingLevel, maxDepth, new AtomicInteger());
         }
     }
 }
